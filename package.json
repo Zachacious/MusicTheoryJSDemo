@@ -28,6 +28,6 @@
   "dependencies": {
     "jzz": "^1.0.1",
     "jzz-synth-tiny": "^1.1.4",
-    "musictheoryjs": "^0.2.3"
+    "musictheoryjs": "^0.3.1"
   }
 }

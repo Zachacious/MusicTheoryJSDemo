@@ -62,7 +62,7 @@ class Sequencer{
 
     prepare(pForm){
         this.mKey = new MT.Note(pForm.key, 2);
-        
+
         switch(pForm.scale){
             case 'Major':
                 this.mScale = MT.Scale.Major(this.mKey);
@@ -85,6 +85,7 @@ class Sequencer{
             case 'MelodicMinor':
                 this.mScale = MT.Scale.MelodicMinorAscend(this.mKey);
                 break;
+            case 'None':
             default: break;
         }
 
@@ -104,15 +105,15 @@ class Sequencer{
             case 'Mixolydian':
                 this.mScale = this.mScale.mixolydianMode();
                 break;
-            case 'Aeolian':
-                this.mScale = this.mScale.Minor(this.mKey);
-                break;
+            // case 'Aeolian':
+            //     this.mScale = this.mScale.Minor(this.mKey);
+            //     break;
             case 'Locrian':
                 this.mScale = this.mScale.locrianMode();
                 break;
             default: break;
         }
-
+        
         this.setRythm([
             new MT.Chord(this.fixChordName(this.mScale.degree(pForm.progression[0]).asString+pForm.chords[0])).octave(2),
             new MT.Chord(this.fixChordName(this.mScale.degree(pForm.progression[1]).asString+pForm.chords[1])).octave(2),
